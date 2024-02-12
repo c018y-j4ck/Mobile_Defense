@@ -152,6 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895cac9035453574ca275c23f2dfb54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotatingPart: {fileID: 0}
+  firePoint: {fileID: 3782012859574076874}
+  bullet: {fileID: 4637228483803035377, guid: f14af4ec59dc72449b9d98d2106af1c0, type: 3}
+  range: 15
+  rotationSpeed: 10
+  fireRate: 1
 --- !u!1 &5383719771911839512
 GameObject:
   m_ObjectHideFlags: 0
