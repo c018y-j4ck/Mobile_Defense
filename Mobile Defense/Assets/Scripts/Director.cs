@@ -1,7 +1,10 @@
 using System.Collections;
 using UnityEngine;
+<<<<<<< HEAD
 using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
+=======
+>>>>>>> 2e595e0bd6570489cdd7fdd8cc90be1e2485ed04
 
 public class Director : MonoBehaviour
 {
@@ -10,13 +13,17 @@ public class Director : MonoBehaviour
     /// </summary>
     public GameObject enemy;
 
+<<<<<<< HEAD
     public GameObject endNode;
 
+=======
+>>>>>>> 2e595e0bd6570489cdd7fdd8cc90be1e2485ed04
     /// <summary>
     /// The point in world space where enemies will spawn from.
     /// </summary>
     public Transform spawnPoint;
 
+<<<<<<< HEAD
     public Text waveCount;
     private static Text livesCount;
 
@@ -26,6 +33,8 @@ public class Director : MonoBehaviour
 
     private GameObject turret;
 
+=======
+>>>>>>> 2e595e0bd6570489cdd7fdd8cc90be1e2485ed04
     /// <summary>
     /// The time between each wave.
     /// </summary>
@@ -44,8 +53,12 @@ public class Director : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< HEAD
         livesCount = GameObject.Find("LivesCount").GetComponent<Text>();
         livesCount.text = "Lives: " + lives;
+=======
+        
+>>>>>>> 2e595e0bd6570489cdd7fdd8cc90be1e2485ed04
     }
 
     // Update is called once per frame
@@ -65,7 +78,10 @@ public class Director : MonoBehaviour
         wave++;
         Debug.Log("Spawning a wave\n" +
             "Wave " + wave);
+<<<<<<< HEAD
         waveCount.text = "Wave " + wave;
+=======
+>>>>>>> 2e595e0bd6570489cdd7fdd8cc90be1e2485ed04
 
         for (int i = 0; i < wave; i++)
         {
@@ -78,6 +94,7 @@ public class Director : MonoBehaviour
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
     }
+<<<<<<< HEAD
 
     public static void LoseLife()
     {
@@ -85,4 +102,6 @@ public class Director : MonoBehaviour
         livesCount.text = "Lives: " + lives;
         if (lives <= 0) Debug.Log("You died!");
     }
+=======
+>>>>>>> 2e595e0bd6570489cdd7fdd8cc90be1e2485ed04
 }

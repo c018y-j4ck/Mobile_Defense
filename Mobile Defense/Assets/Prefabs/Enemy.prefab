@@ -1,5 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
 --- !u!1 &832512970896175121
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,6 +254,8 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+=======
+>>>>>>> 2e595e0bd6570489cdd7fdd8cc90be1e2485ed04
 --- !u!1 &8436659280349849175
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,8 +288,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
+<<<<<<< HEAD
   m_Children:
   - {fileID: 7364965091875215485}
+=======
+  m_Children: []
+>>>>>>> 2e595e0bd6570489cdd7fdd8cc90be1e2485ed04
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6104548430720729451
@@ -373,5 +380,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+<<<<<<< HEAD
   health: 100
   healthBar: {fileID: 301833175526997121}
+=======
+>>>>>>> 2e595e0bd6570489cdd7fdd8cc90be1e2485ed04
