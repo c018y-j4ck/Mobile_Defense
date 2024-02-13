@@ -7,7 +7,10 @@ public class Node : MonoBehaviour
 
     private GameObject turret;
 
+    public static BuildManager buildManager;
+
     public Color highlightedColor;
+    public float turretYOffset = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +27,14 @@ public class Node : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (turret != null) Debug.Log("There is already a turret in this space. (Note: will need UI message)");
+        if (turret != null)
+        {
+            Debug.Log("There is already a turret in this space. (Note: will need UI message)");
+            return;
+        }
 
-
+        GameObject turretToBuild = BuildManager.Instance.GetTurretToBuild();
+        turret = (GameObject) Instantiate(turretToBuild, transform.position + Vector3.up * turretYOffset, transform.rotation);
     }
 
     //on mouse methods below highlight the node that the player hovers over

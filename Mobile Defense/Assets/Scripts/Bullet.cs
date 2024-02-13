@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
     private Transform target;
 
     [Range(10f, 100f)] public float speed = 70f;
+    [Range(10f, 100f)] public float damage = 25f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class Bullet : MonoBehaviour
         if (dir.magnitude <= distance)
         {
             HitTarget();
+            Destroy(gameObject);
             return;
         }
 
@@ -40,6 +42,7 @@ public class Bullet : MonoBehaviour
 
     void HitTarget()
     {
-        Debug.Log("Hit");
+        Enemy eScript;
+        if (target.TryGetComponent<Enemy>(out eScript)) eScript.TakeDamage(damage);
     }
 }
