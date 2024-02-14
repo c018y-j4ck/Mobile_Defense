@@ -152,11 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895cac9035453574ca275c23f2dfb54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   rotatingPart: {fileID: 6216285489925913119}
-=======
-  rotatingPart: {fileID: 0}
->>>>>>> 2e595e0bd6570489cdd7fdd8cc90be1e2485ed04
   firePoint: {fileID: 3782012859574076874}
   bullet: {fileID: 4637228483803035377, guid: f14af4ec59dc72449b9d98d2106af1c0, type: 3}
   range: 15

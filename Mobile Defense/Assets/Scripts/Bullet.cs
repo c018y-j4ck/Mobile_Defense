@@ -5,10 +5,7 @@ public class Bullet : MonoBehaviour
     private Transform target;
 
     [Range(10f, 100f)] public float speed = 70f;
-<<<<<<< HEAD
     [Range(10f, 100f)] public float damage = 25f;
-=======
->>>>>>> 2e595e0bd6570489cdd7fdd8cc90be1e2485ed04
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +28,7 @@ public class Bullet : MonoBehaviour
         if (dir.magnitude <= distance)
         {
             HitTarget();
-<<<<<<< HEAD
             Destroy(gameObject);
-=======
->>>>>>> 2e595e0bd6570489cdd7fdd8cc90be1e2485ed04
             return;
         }
 
@@ -48,11 +42,8 @@ public class Bullet : MonoBehaviour
 
     void HitTarget()
     {
-<<<<<<< HEAD
         Enemy eScript;
         if (target.TryGetComponent<Enemy>(out eScript)) eScript.TakeDamage(damage);
-=======
         Debug.Log("Hit");
->>>>>>> 2e595e0bd6570489cdd7fdd8cc90be1e2485ed04
     }
 }

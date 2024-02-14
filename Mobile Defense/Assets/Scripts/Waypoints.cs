@@ -20,10 +20,12 @@ public class Waypoints : MonoBehaviour
             //Debug.LogError("Error: Waypoints array doesn't exist yet! Try running the game.");
             return;
         }
-
-        for (int i = 0; i < waypoints.Length - 1; i++) 
-        {
-            Debug.DrawLine(waypoints[i].position, waypoints[i+1].position, Color.blue);
-        }
+        //else
+        //{
+        //    for (int i = 0; i < waypoints.Length - 1; i++)
+        //    {
+        //        Debug.DrawLine(waypoints[i].position, waypoints[i + 1].position, Color.blue);
+        //    }
+        //}
     }
 }

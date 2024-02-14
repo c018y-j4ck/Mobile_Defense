@@ -24,12 +24,12 @@ public class MenuButtonScript : MonoBehaviour
 
     public void lvl1Enter()
     {
-        //scene change to lvl1
+        SceneManager.LoadScene(1);
     }
 
     public void lvl2Enter()
     {
-        //scene change to lvl2
+        SceneManager.LoadScene(1);
     }
 
     public void OptionsEnter()
