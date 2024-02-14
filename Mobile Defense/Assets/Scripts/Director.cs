@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Director : MonoBehaviour
@@ -81,6 +82,10 @@ public class Director : MonoBehaviour
     {
         lives--;
         livesCount.text = "Lives: " + lives;
-        if (lives <= 0) Debug.Log("You died!");
+        if (lives <= 0)
+        {
+            Debug.Log("You died!");
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }

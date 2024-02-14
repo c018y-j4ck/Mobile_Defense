@@ -24,7 +24,7 @@ public class MenuButtonScript : MonoBehaviour
 
     public void lvl1Enter()
     {
-        //scene change to lvl1
+        SceneManager.LoadScene("Level_1");
     }
 
     public void lvl2Enter()
@@ -56,6 +56,7 @@ public class MenuButtonScript : MonoBehaviour
 
     public void QuitEnter()
     {
+        Debug.Log("Quit Game");
         Application.Quit();
     }
 }
