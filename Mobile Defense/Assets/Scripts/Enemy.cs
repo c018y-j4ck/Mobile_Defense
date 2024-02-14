@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     private int waypointIndex = 0;
 
     private Transform model;
-    private Transform lookTransform;
+    public GameObject lookTransform;
 
     [Range(1f, 100f)] public float speed = 4f;
 
@@ -24,8 +24,7 @@ public class Enemy : MonoBehaviour
 
         target = Waypoints.waypoints[0];
         health = maxHealth;
-        model = transform.Find("Alien1").transform;
-        lookTransform = transform.Find("LookTransform").transform;
+        model = transform.Find("Model").transform;
     }
 
     // Update is called once per frame
@@ -33,9 +32,11 @@ public class Enemy : MonoBehaviour
     {
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-        lookTransform.LookAt(target.position);
-
-        model.rotation = Quaternion.Lerp(model.rotation, lookTransform.rotation, 0.05f);
+        if (lookTransform != null)
+        {
+            lookTransform.transform.LookAt(target.position);
+            model.rotation = Quaternion.Lerp(model.rotation, lookTransform.transform.rotation, 0.05f);
+        }
 
         if (dir.magnitude <= 0.2f)
         {

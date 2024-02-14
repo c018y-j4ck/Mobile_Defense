@@ -374,6 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7e0ad2317f0ff468c6bc48be36234a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lookTransform: {fileID: 9056182118089972621}
   speed: 8
   health: 100
   healthBar: {fileID: 301833175526997121}
@@ -387,7 +388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3166818552820855513}
   m_Layer: 0
-  m_Name: LookTransform
+  m_Name: LookObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
