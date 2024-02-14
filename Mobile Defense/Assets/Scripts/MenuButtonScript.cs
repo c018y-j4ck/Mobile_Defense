@@ -46,6 +46,14 @@ public class MenuButtonScript : MonoBehaviour
          
     }
 
+    public void DefaultEnter()
+    {
+       Slider volumeSlide= GameObject.Find("VolSlider").GetComponent<Slider>();
+        volumeSlide.value = 1;
+        Slider textSlide = GameObject.Find("TextSlider").GetComponent<Slider>();
+        textSlide.value = 36;
+    }
+
     public void QuitEnter()
     {
         Application.Quit();
