@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public GameObject lookTransform;
 
     [Range(1f, 100f)] public float speed = 4f;
+    Vector3 tiltAdditive = Vector3.zero;
 
     public const float maxHealth = 100f; //remove const later
     public float health;
@@ -30,8 +31,12 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+#if UNITY_IOS || UNITY_ANDROID
+        tiltAdditive = new Vector3(Input.acceleration.x, 0f, Input.acceleration.y);
+#endif
+
         Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+        transform.Translate(dir.normalized * (speed + Vector3.Dot(dir.normalized, tiltAdditive) * speed) * Time.deltaTime, Space.World);
         if (lookTransform != null)
         {
             lookTransform.transform.LookAt(target.position);
