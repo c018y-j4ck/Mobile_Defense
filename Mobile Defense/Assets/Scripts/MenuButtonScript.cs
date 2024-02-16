@@ -32,7 +32,7 @@ public class MenuButtonScript : MonoBehaviour
 
     public void lvl2Enter()
     {
-        //scene change to lvl2
+        SceneManager.LoadScene("Level_2");
     }
 
     public void OptionsEnter()
