@@ -28,7 +28,6 @@ public class Director : MonoBehaviour
     public float turretYOffset = 0.5f;
 
     private GameObject turret;
-
     /// <summary>
     /// The time between each wave.
     /// </summary>

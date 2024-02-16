@@ -44,5 +44,6 @@ public class Bullet : MonoBehaviour
     {
         Enemy eScript;
         if (target.TryGetComponent<Enemy>(out eScript)) eScript.TakeDamage(damage);
+        Debug.Log("Hit");
     }
 }
