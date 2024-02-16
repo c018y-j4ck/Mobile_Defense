@@ -23,7 +23,7 @@ public class Director : MonoBehaviour
     
 
     public static int lives = 25;
-    public static int score = 0;
+    public static int score = 10;
 
     public float turretYOffset = 0.5f;
 
@@ -47,9 +47,11 @@ public class Director : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lives = 25;
         livesCount = GameObject.Find("LivesCount").GetComponent<Text>();
         livesCount.text = "Lives: " + lives;
 
+        score = 10;
         scoreCount = GameObject.Find("ScoreCount").GetComponent<Text>();
         scoreCount.text = "Score: " + score;
     }
@@ -106,6 +108,7 @@ public class Director : MonoBehaviour
         if (score >= s)
         {
             score -= s;
+            scoreCount.text = "Score: " + score;
             return true;
         }
         return false;
