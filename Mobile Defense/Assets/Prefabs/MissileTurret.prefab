@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotatingPart: {fileID: 6216285489925913119}
   firePoint: {fileID: 939076212692349386}
-  bullet: {fileID: 4637228483803035377, guid: f14af4ec59dc72449b9d98d2106af1c0, type: 3}
+  bullet: {fileID: 4637228483803035377, guid: 428ba02b13408e14dac633cdd7629093, type: 3}
   range: 15
   rotationSpeed: 10
   fireRate: 0.5
