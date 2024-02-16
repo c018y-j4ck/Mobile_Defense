@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3252,7 +3252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de55a88da97c7a45a186383d11cfe6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretPrefab: {fileID: 5212637579027093761, guid: f16fde1fbcb94b94383a2145844a842f, type: 3}
+  turretPrefab: {fileID: 5212637579027093761, guid: 377395feb66f81a41af2652a8898a316, type: 3}
 --- !u!1001 &449213685
 PrefabInstance:
   m_ObjectHideFlags: 0
