@@ -19,8 +19,11 @@ public class Director : MonoBehaviour
 
     public Text waveCount;
     private static Text livesCount;
+    private static Text scoreCount;
+    
 
     public static int lives = 25;
+    public static int score = 0;
 
     public float turretYOffset = 0.5f;
 
@@ -46,6 +49,9 @@ public class Director : MonoBehaviour
     {
         livesCount = GameObject.Find("LivesCount").GetComponent<Text>();
         livesCount.text = "Lives: " + lives;
+
+        scoreCount = GameObject.Find("ScoreCount").GetComponent<Text>();
+        scoreCount.text = "Score: " + score;
     }
 
     // Update is called once per frame
@@ -87,5 +93,21 @@ public class Director : MonoBehaviour
             Debug.Log("You died!");
             SceneManager.LoadScene("GameOver");
         }
+    }
+
+    public static void AddScore(int s)
+    {
+        score += s;
+        scoreCount.text = "Score: " + score;
+    }
+
+    public static bool RemoveScore (int s)
+    {
+        if (score >= s)
+        {
+            score -= s;
+            return true;
+        }
+        return false;
     }
 }

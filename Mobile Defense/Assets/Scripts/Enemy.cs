@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0f)
         {
             Die();
+            Director.AddScore(5);
         }
     }
 
