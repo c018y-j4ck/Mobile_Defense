@@ -48,7 +48,6 @@ public class Enemy : MonoBehaviour
             GetNextWaypoint();
         }
     }
-
     public void TakeDamage(float deltaHealth)
     {
         health -= deltaHealth;
@@ -58,6 +57,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0f)
         {
             Die();
+            Director.AddScore(5);
         }
     }
 
@@ -78,7 +78,6 @@ public class Enemy : MonoBehaviour
         waypointIndex++;
         target = Waypoints.waypoints[waypointIndex];
     }
-
     void ReachEndNode()
     {
         Director.LoseLife();

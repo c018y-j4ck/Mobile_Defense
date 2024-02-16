@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Director : MonoBehaviour
@@ -18,8 +19,11 @@ public class Director : MonoBehaviour
 
     public Text waveCount;
     private static Text livesCount;
+    private static Text scoreCount;
+    
 
     public static int lives = 25;
+    public static int score = 10;
 
     public float turretYOffset = 0.5f;
 
@@ -42,8 +46,13 @@ public class Director : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lives = 25;
         livesCount = GameObject.Find("LivesCount").GetComponent<Text>();
         livesCount.text = "Lives: " + lives;
+
+        score = 10;
+        scoreCount = GameObject.Find("ScoreCount").GetComponent<Text>();
+        scoreCount.text = "Score: " + score;
     }
 
     // Update is called once per frame
@@ -76,11 +85,31 @@ public class Director : MonoBehaviour
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
     }
-
     public static void LoseLife()
     {
         lives--;
         livesCount.text = "Lives: " + lives;
-        if (lives <= 0) Debug.Log("You died!");
+        if (lives <= 0)
+        {
+            Debug.Log("You died!");
+            SceneManager.LoadScene("GameOver");
+        }
+    }
+
+    public static void AddScore(int s)
+    {
+        score += s;
+        scoreCount.text = "Score: " + score;
+    }
+
+    public static bool RemoveScore (int s)
+    {
+        if (score >= s)
+        {
+            score -= s;
+            scoreCount.text = "Score: " + score;
+            return true;
+        }
+        return false;
     }
 }

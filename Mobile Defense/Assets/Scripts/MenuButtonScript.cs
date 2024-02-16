@@ -10,6 +10,9 @@ public class MenuButtonScript : MonoBehaviour
     public GameObject MenuCanvas;
     public GameObject OptionsCanvas;
 
+    public GameObject TurretCanvas;
+    public GameObject TurretButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +27,12 @@ public class MenuButtonScript : MonoBehaviour
 
     public void lvl1Enter()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Level_1");
     }
 
     public void lvl2Enter()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Level_2");
     }
 
     public void OptionsEnter()
@@ -46,8 +49,34 @@ public class MenuButtonScript : MonoBehaviour
          
     }
 
+    public void DefaultEnter()
+    {
+       Slider volumeSlide= GameObject.Find("VolSlider").GetComponent<Slider>();
+        volumeSlide.value = 1;
+        Slider textSlide = GameObject.Find("TextSlider").GetComponent<Slider>();
+        textSlide.value = 36;
+    }
+
     public void QuitEnter()
     {
+        Debug.Log("Quit Game");
         Application.Quit();
+    }
+
+    public void MenuEnter()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OpenTurretMenu()
+    {
+        TurretCanvas.SetActive(true);
+        TurretButton.SetActive(false);
+    }
+
+    public void CloseTurretMenu()
+    {
+        TurretCanvas.SetActive(false);
+        TurretButton.SetActive(true);
     }
 }

@@ -11,12 +11,17 @@ public class Node : MonoBehaviour
 
     public Color highlightedColor;
     public float turretYOffset = 0.5f;
+    private bool isTurretSpot = false;
 
     // Start is called before the first frame update
     void Start()
     {
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
+        if (this.gameObject.tag == "turretSpot")
+        {
+            isTurretSpot = true;
+        }
     }
 
     // Update is called once per frame
@@ -32,15 +37,32 @@ public class Node : MonoBehaviour
             Debug.Log("There is already a turret in this space. (Note: will need UI message)");
             return;
         }
-
-        GameObject turretToBuild = BuildManager.Instance.GetTurretToBuild();
-        turret = (GameObject) Instantiate(turretToBuild, transform.position + Vector3.up * turretYOffset, transform.rotation);
+        if (Director.score >= 5 && isTurretSpot)
+        {
+            GameObject turretToBuild = BuildManager.Instance.GetTurretToBuild();
+            Director.RemoveScore(5);
+            turret = (GameObject)Instantiate(turretToBuild, transform.position + Vector3.up * turretYOffset, transform.rotation);
+        }
     }
 
     //on mouse methods below highlight the node that the player hovers over
     private void OnMouseEnter()
     {
-        rend.material.color = highlightedColor;
+        if (isTurretSpot && turret == null)
+        {
+            if (Director.score >= 5)
+            {
+                rend.material.color = Color.green;
+            }
+            else
+            {
+                rend.material.color = Color.yellow;
+            }
+        }
+        else
+        {
+            rend.material.color = Color.red;
+        }
     }
 
     private void OnMouseExit()

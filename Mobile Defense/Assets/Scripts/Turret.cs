@@ -12,6 +12,8 @@ public class Turret : MonoBehaviour
     public Transform rotatingPart;
     public Transform firePoint;
     public GameObject bullet;
+    public AudioClip shootSound;
+    private AudioSource aS;
 
     [Header("Attributes")]
     public float range = 15f;
@@ -21,6 +23,7 @@ public class Turret : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        aS = GetComponent<AudioSource>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -68,6 +71,7 @@ public class Turret : MonoBehaviour
     void Shoot()
     {
         Debug.Log("Shooting");
+        aS.PlayOneShot(shootSound);
         GameObject b = Instantiate(bullet, firePoint.position, firePoint.rotation);
         Bullet bScript = b.GetComponent<Bullet>();
         if (bScript != null) bScript.SetTarget(target);
