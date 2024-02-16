@@ -10,6 +10,9 @@ public class MenuButtonScript : MonoBehaviour
     public GameObject MenuCanvas;
     public GameObject OptionsCanvas;
 
+    public GameObject TurretCanvas;
+    public GameObject TurretButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,5 +66,17 @@ public class MenuButtonScript : MonoBehaviour
     public void MenuEnter()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OpenTurretMenu()
+    {
+        TurretCanvas.SetActive(true);
+        TurretButton.SetActive(false);
+    }
+
+    public void CloseTurretMenu()
+    {
+        TurretCanvas.SetActive(false);
+        TurretButton.SetActive(true);
     }
 }
