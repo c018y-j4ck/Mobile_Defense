@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3496,7 +3496,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 627174387}
   waveCount: {fileID: 1495779544}
   turretYOffset: 0.5
-  timeBetweenWaves: 3
+  timeBetweenWaves: 15
   zoomOutMin: 1
   zoomOutMax: 8
 --- !u!4 &434195797
@@ -9015,7 +9015,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1168209644}
   - component: {fileID: 1168209643}
-  - component: {fileID: 1168209642}
   m_Layer: 0
   m_Name: 3dGraphicsCam
   m_TagString: Untagged
@@ -9023,14 +9022,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1168209642
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168209641}
-  m_Enabled: 1
 --- !u!20 &1168209643
 Camera:
   m_ObjectHideFlags: 0

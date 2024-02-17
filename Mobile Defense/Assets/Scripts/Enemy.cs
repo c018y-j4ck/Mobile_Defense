@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
 
     private Transform model;
     public GameObject lookTransform;
+    public AudioClip spawnSound;
+    public AudioClip damageSound;
+    public AudioSource soundSource;
 
     [Range(1f, 100f)] public float speed = 4f;
     Vector3 tiltAdditive = Vector3.zero;
@@ -22,7 +25,8 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         //director = GameObject.Find("GameManager").GetComponent<Director>();
-
+        soundSource = GetComponent<AudioSource>();
+        soundSource.PlayOneShot(spawnSound);
         target = Waypoints.waypoints[0];
         health = maxHealth;
         model = transform.Find("Model").transform;
@@ -80,6 +84,7 @@ public class Enemy : MonoBehaviour
     }
     void ReachEndNode()
     {
+        soundSource.PlayOneShot(damageSound);
         Director.LoseLife();
     }
 }

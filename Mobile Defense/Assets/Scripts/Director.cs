@@ -31,12 +31,12 @@ public class Director : MonoBehaviour
     /// <summary>
     /// The time between each wave.
     /// </summary>
-    public float timeBetweenWaves = 3f;
+    public float timeBetweenWaves = 15f;
 
     /// <summary>
     /// Time before the first wave begins.
     /// </summary>
-    private float countdown = 2f;
+    private float countdown = 4f;
 
     /// <summary>
     /// The current wave number.
@@ -112,7 +112,7 @@ public class Director : MonoBehaviour
         for (int i = 0; i < wave; i++)
         {
             SpawnEnemy();
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
