@@ -39,4 +39,29 @@ public class BuildManager : MonoBehaviour
     {
         return turretToBuild;
     }
+
+    public void ChangeTurretToBuild(int turretOption)
+    {
+        switch (turretOption)
+        {
+            case 0:
+                Debug.Log("Turret Selected: Gun");
+                //turretToBuild = gunTurretPrefab
+                break;
+            case 1:
+                Debug.Log("Turret Selected: Missile");
+                //turretToBuild = missileTurretPrefab
+                break;
+            case 2:
+                Debug.Log("Turret Selected: Laser");
+                //turretToBuild = laserTurretPrefab
+                break;
+            default:
+                Debug.Log("Input not in case list. Gun Selected");
+                //turretToBuild = gunTurretPrefab
+                break;
+
+        }
+    }
+
 }

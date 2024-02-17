@@ -1236,6 +1236,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 871960255}
   - {fileID: 898100557}
   - {fileID: 967001468}
   m_Father: {fileID: 0}
@@ -3425,7 +3426,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de55a88da97c7a45a186383d11cfe6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretPrefab: {fileID: 5212637579027093761, guid: f16fde1fbcb94b94383a2145844a842f, type: 3}
+  turretPrefab: {fileID: 5212637579027093761, guid: 78e0b9654b316814b91373ca2bc96055, type: 3}
+  missilePrefab: {fileID: 5212637579027093761, guid: 377395feb66f81a41af2652a8898a316, type: 3}
 --- !u!1001 &449213685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6754,7 +6756,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &871960255
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6764,15 +6766,15 @@ RectTransform:
   m_GameObject: {fileID: 871960254}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1918999, y: 0.1918999, z: 0.1918999}
+  m_LocalScale: {x: 1.4026247, y: 1.4026247, z: 1.4026247}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 41231874}
-  m_Father: {fileID: 1286118959}
+  m_Father: {fileID: 73037727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -16.3}
+  m_AnchoredPosition: {x: 381.1145, y: -165.83252}
   m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &871960256
@@ -9823,7 +9825,6 @@ RectTransform:
   m_Children:
   - {fileID: 2013871346}
   - {fileID: 1741089274}
-  - {fileID: 871960255}
   m_Father: {fileID: 2096881450}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -13296,10 +13297,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 434195798}
-        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
-        m_MethodName: ChangeTurretToBuild
-        m_Mode: 3
+      - m_Target: {fileID: 2096881453}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: PurchaseMissile
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15849,10 +15850,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 434195798}
-        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
-        m_MethodName: ChangeTurretToBuild
-        m_Mode: 3
+      - m_Target: {fileID: 2096881453}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: PurchaseTurret
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -16414,13 +16415,14 @@ GameObject:
   - component: {fileID: 2096881450}
   - component: {fileID: 2096881452}
   - component: {fileID: 2096881451}
+  - component: {fileID: 2096881453}
   m_Layer: 5
   m_Name: TurretMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2096881450
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16481,6 +16483,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096881449}
   m_CullTransparentMesh: 1
+--- !u!114 &2096881453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096881449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3518e76c82e79b945bfdcaecb7bdb6b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2114129987
 PrefabInstance:
   m_ObjectHideFlags: 0

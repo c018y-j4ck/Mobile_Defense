@@ -43,7 +43,7 @@ public class Node : MonoBehaviour
             return;
         }
         Turret tScript;
-        if (buildManager.GetTurretToBuild().TryGetComponent<Turret>(out tScript))
+        if (buildManager.GetTurretToBuild().TryGetComponent<Turret>(out tScript) && isTurretSpot)
         {
             if (Director.score >= tScript.cost)
             {
@@ -59,7 +59,7 @@ public class Node : MonoBehaviour
     {
         if (buildManager.GetTurretToBuild() == null) return;
 
-        if (turret == null)
+        if (turret == null && isTurretSpot)
         {
             if (Director.score >= 5)
             {
