@@ -45,6 +45,7 @@ public class Director : MonoBehaviour
 
     public float zoomOutMin = 1;
     public float zoomOutMax = 8;
+    Vector3 touchStart;
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +70,10 @@ public class Director : MonoBehaviour
 
         countdown -= Time.deltaTime;
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            touchStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
         if (Input.touchCount == 2)
         {
             Touch touchZero = Input.GetTouch(0);
@@ -83,6 +88,11 @@ public class Director : MonoBehaviour
             float difference = currentMagnitude - prevMagnitude;
 
             zoom(difference * 0.01f);
+        }
+        else if (Input.GetMouseButton(0))
+        {
+            Vector3 direction = touchStart - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Camera.main.transform.position += direction;
         }
         zoom(Input.GetAxis("Mouse ScrollWheel"));
     }
