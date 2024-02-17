@@ -19,6 +19,7 @@ public class Turret : MonoBehaviour
     public float range = 15f;
     public float rotationSpeed = 10f;
     [Range(0.1f, 60f)] public float fireRate = 1f;
+    public int cost;
 
     // Start is called before the first frame update
     void Start()

@@ -18,6 +18,9 @@ public class Node : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
+
+        buildManager = BuildManager.Instance;
+
         if (this.gameObject.tag == "turretSpot")
         {
             isTurretSpot = true;
@@ -32,23 +35,31 @@ public class Node : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (buildManager.GetTurretToBuild() == null) return;
+
         if (turret != null)
         {
             Debug.Log("There is already a turret in this space. (Note: will need UI message)");
             return;
         }
-        if (Director.score >= 5 && isTurretSpot)
+        Turret tScript;
+        if (buildManager.GetTurretToBuild().TryGetComponent<Turret>(out tScript))
         {
-            GameObject turretToBuild = BuildManager.Instance.GetTurretToBuild();
-            Director.RemoveScore(5);
-            turret = (GameObject)Instantiate(turretToBuild, transform.position + Vector3.up * turretYOffset, transform.rotation);
+            if (Director.score >= tScript.cost)
+            {
+                GameObject turretToBuild = buildManager.GetTurretToBuild();
+                Director.RemoveScore(tScript.cost);
+                turret = (GameObject)Instantiate(turretToBuild, transform.position + Vector3.up * turretYOffset, transform.rotation);
+            }
         }
     }
 
     //on mouse methods below highlight the node that the player hovers over
     private void OnMouseEnter()
     {
-        if (isTurretSpot && turret == null)
+        if (buildManager.GetTurretToBuild() == null) return;
+
+        if (turret == null)
         {
             if (Director.score >= 5)
             {

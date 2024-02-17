@@ -156,9 +156,11 @@ MonoBehaviour:
   rotatingPart: {fileID: 6216285489925913119}
   firePoint: {fileID: 939076212692349386}
   bullet: {fileID: 4637228483803035377, guid: 428ba02b13408e14dac633cdd7629093, type: 3}
-  range: 15
+  shootSound: {fileID: 0}
+  range: 25
   rotationSpeed: 10
   fireRate: 0.5
+  cost: 10
 --- !u!1001 &2053535308269024986
 PrefabInstance:
   m_ObjectHideFlags: 0
