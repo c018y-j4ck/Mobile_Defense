@@ -3497,6 +3497,8 @@ MonoBehaviour:
   waveCount: {fileID: 1495779544}
   turretYOffset: 0.5
   timeBetweenWaves: 3
+  zoomOutMin: 1
+  zoomOutMax: 8
 --- !u!4 &434195797
 Transform:
   m_ObjectHideFlags: 0
