@@ -3527,7 +3527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretPrefab: {fileID: 5212637579027093761, guid: 78e0b9654b316814b91373ca2bc96055, type: 3}
-  missilePrefab: {fileID: 5212637579027093761, guid: 377395feb66f81a41af2652a8898a316, type: 3}
+  missilePrefab: {fileID: 0}
 --- !u!1001 &449213685
 PrefabInstance:
   m_ObjectHideFlags: 0
