@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,7 +9,11 @@ public class Director : MonoBehaviour
     /// <summary>
     /// Prefab of the enemy.
     /// </summary>
-    public GameObject enemy;
+
+    //public GameObject enemy;
+
+    public Wave[] waves;
+
     public static int numOfEnemies;
 
     public GameObject endNode;
@@ -42,7 +47,7 @@ public class Director : MonoBehaviour
     /// <summary>
     /// The current wave number.
     /// </summary>
-    private int wave = 0;
+    private int waveIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -75,19 +80,23 @@ public class Director : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        wave++;
         Debug.Log("Spawning a wave\n" +
-            "Wave " + wave);
-        waveCount.text = "Wave " + wave;
+            "Wave " + waveIndex);
+        waveCount.text = "Wave " + waveIndex;
 
-        for (int i = 0; i < wave; i++)
+        //set the current wave. If we've reached
+        //the end of the wave list, default to the first wave
+        Wave wave = waveIndex < waves.Length ? waves[waveIndex] : waves[0];
+
+        for (int i = 0; i < wave.count; i++)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(0.5f);
+            SpawnEnemy(wave.enemy);
+            yield return new WaitForSeconds(1 / wave.spawnRate);
         }
+        waveIndex++;
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(GameObject enemy)
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
         numOfEnemies++;

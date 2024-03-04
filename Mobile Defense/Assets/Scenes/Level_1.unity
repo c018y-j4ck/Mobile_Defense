@@ -3491,12 +3491,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e35a1b20d9e714495e21bd4be04314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+  waves:
+  - enemy: {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    count: 3
+    spawnRate: 1
+  - enemy: {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    count: 5
+    spawnRate: 0.75
+  - enemy: {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    count: 3
+    spawnRate: 5
   endNode: {fileID: 0}
   spawnPoint: {fileID: 627174387}
   waveCount: {fileID: 1495779544}
   turretYOffset: 0.5
-  timeBetweenWaves: 15
+  timeBetweenWaves: 5
 --- !u!4 &434195797
 Transform:
   m_ObjectHideFlags: 0
@@ -3525,7 +3534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretPrefab: {fileID: 5212637579027093761, guid: 78e0b9654b316814b91373ca2bc96055, type: 3}
-  missilePrefab: {fileID: 0}
+  missilePrefab: {fileID: 5212637579027093761, guid: 377395feb66f81a41af2652a8898a316, type: 3}
 --- !u!1001 &449213685
 PrefabInstance:
   m_ObjectHideFlags: 0
