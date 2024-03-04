@@ -9,6 +9,7 @@ public class Director : MonoBehaviour
     /// Prefab of the enemy.
     /// </summary>
     public GameObject enemy;
+    public static int numOfEnemies;
 
     public GameObject endNode;
 
@@ -58,10 +59,15 @@ public class Director : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //wait to spawn more enemies until the enemies
+        //currently alive are defeated
+        if (numOfEnemies > 0) return;
+
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
+            return;
         }
 
         countdown -= Time.deltaTime;
@@ -84,6 +90,8 @@ public class Director : MonoBehaviour
     void SpawnEnemy()
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+        numOfEnemies++;
+        
     }
     public static void LoseLife()
     {
