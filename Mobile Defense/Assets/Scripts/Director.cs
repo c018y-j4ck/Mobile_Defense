@@ -37,7 +37,7 @@ public class Director : MonoBehaviour
     /// <summary>
     /// The time between each wave.
     /// </summary>
-    public float timeBetweenWaves = 15f;
+    public float timeBetweenWaves = 10f;
 
     /// <summary>
     /// Time before the first wave begins.
