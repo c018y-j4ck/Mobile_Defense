@@ -68,6 +68,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+        Director.numOfEnemies--;
         return;
     }
     void GetNextWaypoint()
@@ -86,5 +87,6 @@ public class Enemy : MonoBehaviour
     {
         soundSource.PlayOneShot(damageSound);
         Director.LoseLife();
+        Director.numOfEnemies--;
     }
 }
