@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private Transform target;
+    public Transform target;
 
     [Range(10f, 100f)] public float speed = 70f;
     [Range(10f, 100f)] public float damage = 25f;
@@ -40,7 +40,7 @@ public class Bullet : MonoBehaviour
         target = t;
     }
 
-    void HitTarget()
+    public virtual void HitTarget()
     {
         Enemy eScript;
         if (target.TryGetComponent<Enemy>(out eScript)) eScript.TakeDamage(damage);
