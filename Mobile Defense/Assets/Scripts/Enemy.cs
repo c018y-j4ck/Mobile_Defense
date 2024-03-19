@@ -15,8 +15,8 @@ public class Enemy : MonoBehaviour
     [Range(1f, 100f)] public float speed = 4f;
     Vector3 tiltAdditive = Vector3.zero;
 
-    public const float maxHealth = 100f; //remove const later
-    public float health;
+    public float maxHealth = 100f;
+    private float health;
 
     [Header("Used Objects")]
     public Image healthBar;
