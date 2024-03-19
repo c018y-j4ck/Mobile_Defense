@@ -13,7 +13,7 @@ public class Turret : MonoBehaviour
     public Transform firePoint;
     public GameObject bullet;
     public AudioClip shootSound;
-    private AudioSource aS;
+    protected AudioSource aS;
 
     [Header("Attributes")]
     public float range = 15f;
@@ -69,9 +69,8 @@ public class Turret : MonoBehaviour
         fireTimer -= Time.deltaTime;
     }
 
-    void Shoot()
+    public virtual void Shoot()
     {
-        Debug.Log("Shooting");
         aS.PlayOneShot(shootSound);
         GameObject b = Instantiate(bullet, firePoint.position, firePoint.rotation);
         Bullet bScript = b.GetComponent<Bullet>();

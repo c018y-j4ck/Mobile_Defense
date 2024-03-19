@@ -361,7 +361,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-6199497341125062610
 MonoBehaviour:
@@ -380,7 +380,7 @@ MonoBehaviour:
   damageSound: {fileID: 8300000, guid: e1e6739474d9353429cca8646fa166e2, type: 3}
   soundSource: {fileID: 0}
   speed: 8
-  health: 100
+  maxHealth: 100
   healthBar: {fileID: 301833175526997121}
 --- !u!82 &400436393702957618
 AudioSource:
