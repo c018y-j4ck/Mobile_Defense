@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Linq;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -86,7 +87,19 @@ public class Director : MonoBehaviour
 
         //set the current wave. If we've reached
         //the end of the wave list, default to the first wave
-        Wave wave = waveIndex < waves.Length ? waves[waveIndex] : waves[0];
+        Wave wave;
+        if (waves.Length > 0)
+        {
+            if (waveIndex < waves.Length) wave = waves[waveIndex];
+            else wave = waves[0];
+        }
+        //if no waves are defined, this warning will display
+        else
+        {
+            Debug.LogWarning("Warning: The director has no waves defined! " +
+            "You can create waves for the director in the inspector");
+            yield break;
+        }
 
         for (int i = 0; i < wave.count; i++)
         {
