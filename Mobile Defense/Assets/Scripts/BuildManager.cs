@@ -24,6 +24,7 @@ public class BuildManager : MonoBehaviour
     /// </summary>
     public GameObject turretPrefab;
     public GameObject missilePrefab;
+    public GameObject railgunPrefab;
 
     private void Start()
     {

@@ -19,4 +19,10 @@ public class Shop : MonoBehaviour
         Debug.Log("Purchased the missile turret");
         buildManager.SetTurretToBuild(buildManager.missilePrefab);
     }
+
+    public void PurchaseRailgun()
+    {
+        Debug.Log("Purchased the railgun turret");
+        buildManager.SetTurretToBuild(buildManager.railgunPrefab);
+    }
 }
