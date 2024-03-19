@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3694,7 +3694,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 290.9209, y: 490.92084}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &445527200
@@ -12409,8 +12409,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemy: {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    count: 5
+    spawnRate: 1
+  - enemy: {fileID: 8436659280349849175, guid: e6f786c696d352540a9ad04ed4744ea7, type: 3}
     count: 3
     spawnRate: 1
+  - enemy: {fileID: 8436659280349849175, guid: 6dfc4dcd7c41c9043be55929d810f83e, type: 3}
+    count: 2
+    spawnRate: 2
   endNode: {fileID: 892138086}
   spawnPoint: {fileID: 1641169139}
   waveCount: {fileID: 265580837}
@@ -15594,7 +15600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 359.99997, y: 120}
+  m_AnchoredPosition: {x: 359.99994, y: 120}
   m_SizeDelta: {x: 730.9148, y: 730.9148}
   m_Pivot: {x: 1, y: 1}
 --- !u!4 &1906167007 stripped
