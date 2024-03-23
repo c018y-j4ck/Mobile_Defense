@@ -13,6 +13,8 @@ public class Node : MonoBehaviour
     public float turretYOffset = 0.5f;
     private bool isTurretSpot = false;
 
+    public Material gold;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +41,12 @@ public class Node : MonoBehaviour
 
         if (turret != null)
         {
-            Debug.Log("There is already a turret in this space. (Note: will need UI message)");
+            //Debug.Log("There is already a turret in this space. (Note: will need UI message)");
+            if(turret.tag.Equals("basicTurret") && Director.score >= 5)
+            {
+                turret.GetComponent<Turret>().fireRate = 2;
+                turret.transform.GetChild(0).transform.GetChild(1).GetComponent<MeshRenderer>().material = gold;
+            }
             return;
         }
         Turret tScript;
