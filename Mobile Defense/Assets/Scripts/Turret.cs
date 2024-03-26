@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    private Transform target;
+    protected Transform target;
 
     private float fireTimer = 0f;
     private string enemyTag = "Enemy";
@@ -14,6 +14,7 @@ public class Turret : MonoBehaviour
     public GameObject bullet;
     public AudioClip shootSound;
     protected AudioSource aS;
+    protected float laserWidth = 0f;
 
     [Header("Attributes")]
     public float range = 15f;
@@ -25,7 +26,7 @@ public class Turret : MonoBehaviour
     void Start()
     {
         aS = GetComponent<AudioSource>();
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        InvokeRepeating("UpdateTarget", 0f, 0.1f);
     }
 
     // Update is called once per frame
@@ -67,6 +68,8 @@ public class Turret : MonoBehaviour
             fireTimer = 1f / fireRate;
         }
         fireTimer -= Time.deltaTime;
+
+        RenderLaser();
     }
 
     public virtual void Shoot()
@@ -75,6 +78,11 @@ public class Turret : MonoBehaviour
         GameObject b = Instantiate(bullet, firePoint.position, firePoint.rotation);
         Bullet bScript = b.GetComponent<Bullet>();
         if (bScript != null) bScript.SetTarget(target);
+    }
+
+    public virtual void RenderLaser()
+    {
+        if (laserWidth > 0f) laserWidth = Mathf.Max(0f, laserWidth - 0.01f);
     }
 
     private void OnDrawGizmosSelected()
