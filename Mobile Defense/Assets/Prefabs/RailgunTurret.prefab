@@ -257,7 +257,7 @@ MonoBehaviour:
   range: 50
   rotationSpeed: 10
   fireRate: 1
-  cost: 0
+  cost: 20
 --- !u!1001 &6886013081691074184
 PrefabInstance:
   m_ObjectHideFlags: 0
