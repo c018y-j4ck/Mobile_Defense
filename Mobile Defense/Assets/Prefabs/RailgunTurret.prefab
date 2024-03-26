@@ -99,6 +99,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: c6d8e1dc8c0c1384f823046b50ffa747, type: 2}
+  - {fileID: 2100000, guid: 3a631d59b5f5a9748a23a48e7ba71922, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -259,6 +260,7 @@ MonoBehaviour:
   rotationSpeed: 10
   fireRate: 1
   cost: 20
+  lineRenderer: {fileID: 5964985477591505593}
 --- !u!120 &5964985477591505593
 LineRenderer:
   serializedVersion: 2
