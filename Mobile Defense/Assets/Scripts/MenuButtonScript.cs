@@ -9,6 +9,7 @@ public class MenuButtonScript : MonoBehaviour
 {
     public GameObject MenuCanvas;
     public GameObject OptionsCanvas;
+    public GameObject instructionsCanvas;
 
     public GameObject TurretCanvas;
     public GameObject TurretButton;
@@ -46,7 +47,14 @@ public class MenuButtonScript : MonoBehaviour
     {
         MenuCanvas.SetActive(true);
         OptionsCanvas.SetActive(false);
+        instructionsCanvas.SetActive(false);
          
+    }
+
+    public void InstructionsEnter()
+    {
+        instructionsCanvas.SetActive(true);
+        MenuCanvas.SetActive(false);
     }
 
     public void DefaultEnter()
