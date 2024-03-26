@@ -31,6 +31,7 @@ public class Director : MonoBehaviour
 
     public static int lives = 25;
     public static int score = 10;
+    public int waveGoal;
 
     public float turretYOffset = 0.5f;
 
@@ -71,9 +72,17 @@ public class Director : MonoBehaviour
 
         if (countdown <= 0f)
         {
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
-            return;
+            if (waveIndex >= waveGoal)
+            {
+                Debug.Log("Game Won!");
+                SceneManager.LoadScene("GameWon");
+            }
+            else
+            {
+                StartCoroutine(SpawnWave());
+                countdown = timeBetweenWaves;
+                return;
+            }
         }
 
         countdown -= Time.deltaTime;
@@ -83,7 +92,7 @@ public class Director : MonoBehaviour
     {
         Debug.Log("Spawning a wave\n" +
             "Wave " + waveIndex);
-        waveCount.text = "Wave " + waveIndex;
+        waveCount.text = "Wave " + (waveIndex + 1);
 
         //set the current wave. If we've reached
         //the end of the wave list, default to the first wave

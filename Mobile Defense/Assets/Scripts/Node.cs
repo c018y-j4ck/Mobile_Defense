@@ -94,7 +94,7 @@ public class Node : MonoBehaviour
             {
                 turret.GetComponent<Turret>().fireRate = 2;
                 turret.transform.GetChild(0).transform.GetChild(1).GetComponent<MeshRenderer>().material = gold;
-                Director.score -= 5;
+                Director.RemoveScore(5);
             }
             
         }
@@ -104,7 +104,7 @@ public class Node : MonoBehaviour
             {
                 turret.GetComponent<Turret>().fireRate = 2;
                 turret.transform.GetChild(0).transform.GetChild(2).GetComponent<MeshRenderer>().material = gold;
-                Director.score -= 10;
+                Director.RemoveScore(10);
             }
 
         }
