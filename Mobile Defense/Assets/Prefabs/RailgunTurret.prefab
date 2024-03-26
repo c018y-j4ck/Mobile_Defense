@@ -154,7 +154,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 216c744648018354ba44be1e013f2456, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -255,11 +255,11 @@ MonoBehaviour:
   rotatingPart: {fileID: 6216285489925913119}
   firePoint: {fileID: 939076212692349386}
   bullet: {fileID: 4637228483803035377, guid: f14af4ec59dc72449b9d98d2106af1c0, type: 3}
-  shootSound: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: 216c744648018354ba44be1e013f2456, type: 3}
   range: 50
   rotationSpeed: 10
   fireRate: 1
-  cost: 20
+  cost: 50
   lineRenderer: {fileID: 5964985477591505593}
 --- !u!120 &5964985477591505593
 LineRenderer:
