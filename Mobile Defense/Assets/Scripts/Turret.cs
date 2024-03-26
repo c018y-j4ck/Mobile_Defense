@@ -27,6 +27,7 @@ public class Turret : MonoBehaviour
     {
         aS = GetComponent<AudioSource>();
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
+        fireTimer = 1f / fireRate;
     }
 
     // Update is called once per frame
@@ -55,6 +56,8 @@ public class Turret : MonoBehaviour
 
     private void Update()
     {
+        RenderLaser();
+
         if (target == null) return;
 
         Vector3 dir = target.position - transform.position;
@@ -67,9 +70,7 @@ public class Turret : MonoBehaviour
             Shoot();
             fireTimer = 1f / fireRate;
         }
-        fireTimer -= Time.deltaTime;
-
-        RenderLaser();
+        fireTimer -= Time.deltaTime;        
     }
 
     public virtual void Shoot()
