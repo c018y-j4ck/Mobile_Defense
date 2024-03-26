@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Node : MonoBehaviour
 {
@@ -42,11 +43,8 @@ public class Node : MonoBehaviour
         if (turret != null)
         {
             //Debug.Log("There is already a turret in this space. (Note: will need UI message)");
-            if(turret.tag.Equals("basicTurret") && Director.score >= 5)
-            {
-                turret.GetComponent<Turret>().fireRate = 2;
-                turret.transform.GetChild(0).transform.GetChild(1).GetComponent<MeshRenderer>().material = gold;
-            }
+            //buildManager.TurretUpgradeMenu();
+            UpgradePlacedTurret(turret.tag);
             return;
         }
         Turret tScript;
@@ -86,5 +84,29 @@ public class Node : MonoBehaviour
     private void OnMouseExit()
     {
         rend.material.color = startColor;
+    }
+
+    public void UpgradePlacedTurret(string tag)
+    {
+        if(tag == "basicTurret")
+        {
+            if (Director.score >= 5)
+            {
+                turret.GetComponent<Turret>().fireRate = 2;
+                turret.transform.GetChild(0).transform.GetChild(1).GetComponent<MeshRenderer>().material = gold;
+                Director.score -= 5;
+            }
+            
+        }
+        if (tag == "missileTurret")
+        {
+            if (Director.score >= 10)
+            {
+                turret.GetComponent<Turret>().fireRate = 2;
+                turret.transform.GetChild(0).transform.GetChild(2).GetComponent<MeshRenderer>().material = gold;
+                Director.score -= 10;
+            }
+
+        }
     }
 }

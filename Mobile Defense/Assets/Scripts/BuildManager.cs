@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,8 @@ public class BuildManager : MonoBehaviour
     public GameObject turretPrefab;
     public GameObject missilePrefab;
     public GameObject railgunPrefab;
+
+    public GameObject upgradeMenu;
 
     private void Start()
     {
@@ -65,4 +68,8 @@ public class BuildManager : MonoBehaviour
         }
     }
 
+    public void TurretUpgradeMenu()
+    {
+        upgradeMenu.SetActive(true);
+    }
 }

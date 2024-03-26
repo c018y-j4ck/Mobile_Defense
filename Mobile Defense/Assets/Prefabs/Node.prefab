@@ -120,4 +120,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightedColor: {r: 0.8773585, g: 0.44281775, b: 0.44281775, a: 0}
   turretYOffset: 0.5
+  upgradeHUD: {fileID: 0}
   gold: {fileID: 2100000, guid: 5d4095277c1ecea438ee0c89b1ced766, type: 2}
