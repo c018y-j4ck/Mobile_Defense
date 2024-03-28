@@ -4,7 +4,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using TiltFive;
 public class Director : MonoBehaviour
 {
     /// <summary>
@@ -86,6 +86,9 @@ public class Director : MonoBehaviour
         }
 
         countdown -= Time.deltaTime;
+
+        //if (TiltFive.Input.GetWandAvailability()) Debug.Log("Wand is available");
+        //else Debug.LogError("Error: Wand is not available");
     }
 
     IEnumerator SpawnWave()
