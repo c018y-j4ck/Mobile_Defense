@@ -8,6 +8,7 @@ TagManager:
   - turretSpot
   - basicTurret
   - missileTurret
+  - railgunTurret
   layers:
   - Default
   - TransparentFX

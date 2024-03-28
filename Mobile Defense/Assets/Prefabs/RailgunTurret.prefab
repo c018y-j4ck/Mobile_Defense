@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 5964985477591505593}
   m_Layer: 0
   m_Name: RailgunTurret
-  m_TagString: Untagged
+  m_TagString: railgunTurret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: 216c744648018354ba44be1e013f2456, type: 3}
   range: 50
   rotationSpeed: 10
-  fireRate: 1
+  fireRate: 0.25
   cost: 50
   lineRenderer: {fileID: 5964985477591505593}
 --- !u!120 &5964985477591505593

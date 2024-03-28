@@ -3761,7 +3761,7 @@ MonoBehaviour:
   endNode: {fileID: 0}
   spawnPoint: {fileID: 627174387}
   waveCount: {fileID: 1495779544}
-  waveGoal: 5
+  waveGoal: 10
   turretYOffset: 0.5
   timeBetweenWaves: 5
 --- !u!4 &434195797
@@ -5036,6 +5036,7 @@ RectTransform:
   m_Children:
   - {fileID: 1580172722}
   - {fileID: 498132547}
+  - {fileID: 545245573}
   m_Father: {fileID: 1286118959}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

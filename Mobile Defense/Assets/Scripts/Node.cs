@@ -102,9 +102,19 @@ public class Node : MonoBehaviour
         {
             if (Director.score >= 10)
             {
-                turret.GetComponent<Turret>().fireRate = 2;
+                turret.GetComponent<Turret>().fireRate = 0.75f;
                 turret.transform.GetChild(0).transform.GetChild(2).GetComponent<MeshRenderer>().material = gold;
                 Director.RemoveScore(10);
+            }
+
+        }
+        if (tag == "railgunTurret")
+        {
+            if (Director.score >= 50)
+            {
+                turret.GetComponent<Turret>().fireRate = 0.5f;
+                turret.transform.GetChild(0).transform.GetChild(2).GetComponent<MeshRenderer>().material = gold;
+                Director.RemoveScore(50);
             }
 
         }
