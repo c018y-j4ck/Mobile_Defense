@@ -158,9 +158,11 @@ MonoBehaviour:
   firePoint: {fileID: 939076212692349386}
   bullet: {fileID: 4637228483803035377, guid: 428ba02b13408e14dac633cdd7629093, type: 3}
   shootSound: {fileID: 8300000, guid: c59699ade81d5b544b17acbe2d140d59, type: 3}
+  spentMat: {fileID: 2100000, guid: 17d4313a1f499964fbf69c95ed0ce111, type: 2}
   range: 25
   rotationSpeed: 10
   fireRate: 0.5
+  ammo: 25
   cost: 10
 --- !u!82 &-4327485939072309643
 AudioSource:

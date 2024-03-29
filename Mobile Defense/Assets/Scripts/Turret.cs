@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Turret : MonoBehaviour
@@ -20,6 +21,7 @@ public class Turret : MonoBehaviour
     public float range = 15f;
     public float rotationSpeed = 10f;
     [Range(0.1f, 60f)] public float fireRate = 1f;
+    public int ammo = 100;
     public int cost;
 
     // Start is called before the first frame update
@@ -37,7 +39,7 @@ public class Turret : MonoBehaviour
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
 
-        foreach(GameObject e in enemies)
+        foreach (GameObject e in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, e.transform.position);
             if (distanceToEnemy < shortestDistance)
@@ -70,7 +72,7 @@ public class Turret : MonoBehaviour
             Shoot();
             fireTimer = 1f / fireRate;
         }
-        fireTimer -= Time.deltaTime;        
+        fireTimer -= Time.deltaTime;
     }
 
     public virtual void Shoot()
@@ -79,6 +81,11 @@ public class Turret : MonoBehaviour
         GameObject b = Instantiate(bullet, firePoint.position, firePoint.rotation);
         Bullet bScript = b.GetComponent<Bullet>();
         if (bScript != null) bScript.SetTarget(target);
+        ammo--;
+        if (ammo <= 0)
+        {
+            Destroy(this.gameObject, 1f);
+        }
     }
 
     public virtual void RenderLaser()
