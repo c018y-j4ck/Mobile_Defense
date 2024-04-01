@@ -7,7 +7,7 @@ public class SliderScript : MonoBehaviour
 {
     [SerializeField] Slider theSlider;
     static float currentVol;
-    static int currentSize;
+    static float currentSize;
 
     // Start is called before the first frame update
     void Start()
@@ -18,16 +18,18 @@ public class SliderScript : MonoBehaviour
     public void ChangeVol()
     {
         AudioListener.volume = theSlider.value;
+        PlayerPrefs.SetFloat("volume%", currentSize);
         currentVol = theSlider.value;
     }
 
     public void ChangeTextSize()
     {
-        currentSize = (int)theSlider.value;
+        currentSize = (float)theSlider.value/100;
+        PlayerPrefs.SetFloat("text%",currentSize);
         Text[] allText = FindObjectsOfType<Text>();
         foreach(Text i in allText)
         {
-            i.fontSize = currentSize;
+            i.fontSize = (int)currentSize*i.fontSize;
         }
     }
 }

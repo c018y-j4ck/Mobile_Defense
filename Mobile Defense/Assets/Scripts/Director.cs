@@ -54,6 +54,15 @@ public class Director : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioListener.volume = PlayerPrefs.GetFloat("volume%");
+
+        float sizePercent = PlayerPrefs.GetFloat("text%");
+        Text[] allText = FindObjectsOfType<Text>();
+        foreach (Text i in allText)
+        {
+            i.fontSize = (int)sizePercent * i.fontSize;
+        }
+
         lives = 25;
         livesCount = GameObject.Find("LivesCount").GetComponent<Text>();
         livesCount.text = "Lives: " + lives;
