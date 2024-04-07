@@ -35,9 +35,11 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-#if UNITY_IOS || UNITY_ANDROID
-        tiltAdditive = new Vector3(Input.acceleration.x, 0f, Input.acceleration.y);
-#endif
+        //the #if statements were giving me trouble so I commented them out.
+        //Probably Unity Remote's fault
+//#if UNITY_IOS || UNITY_ANDROID
+        tiltAdditive = new Vector3(Input.acceleration.x, 0f, Input.acceleration.y) * 0.5f;
+//#endif
 
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * (speed + Vector3.Dot(dir.normalized, tiltAdditive) * speed) * Time.deltaTime, Space.World);
