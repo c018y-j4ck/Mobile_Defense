@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3749,15 +3749,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - enemy: {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
-    count: 3
+  - enemies:
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
     spawnRate: 1
-  - enemy: {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
-    count: 5
+  - enemies:
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    - {fileID: 8436659280349849175, guid: e6f786c696d352540a9ad04ed4744ea7, type: 3}
+    - {fileID: 8436659280349849175, guid: e6f786c696d352540a9ad04ed4744ea7, type: 3}
+    spawnRate: 1
+  - enemies:
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    - {fileID: 8436659280349849175, guid: 6dfc4dcd7c41c9043be55929d810f83e, type: 3}
+    - {fileID: 8436659280349849175, guid: 6dfc4dcd7c41c9043be55929d810f83e, type: 3}
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
     spawnRate: 0.75
-  - enemy: {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
-    count: 3
-    spawnRate: 5
+  - enemies:
+    - {fileID: 8436659280349849175, guid: e6f786c696d352540a9ad04ed4744ea7, type: 3}
+    - {fileID: 8436659280349849175, guid: e6f786c696d352540a9ad04ed4744ea7, type: 3}
+    - {fileID: 8436659280349849175, guid: e6f786c696d352540a9ad04ed4744ea7, type: 3}
+    - {fileID: 8436659280349849175, guid: e6f786c696d352540a9ad04ed4744ea7, type: 3}
+    - {fileID: 8436659280349849175, guid: e6f786c696d352540a9ad04ed4744ea7, type: 3}
+    spawnRate: 1.2
+  - enemies:
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    - {fileID: 8436659280349849175, guid: c118c14344409d34a82a8b26eb7147db, type: 3}
+    - {fileID: 8436659280349849175, guid: e6f786c696d352540a9ad04ed4744ea7, type: 3}
+    - {fileID: 8436659280349849175, guid: e6f786c696d352540a9ad04ed4744ea7, type: 3}
+    - {fileID: 8436659280349849175, guid: e6f786c696d352540a9ad04ed4744ea7, type: 3}
+    - {fileID: 8436659280349849175, guid: 6dfc4dcd7c41c9043be55929d810f83e, type: 3}
+    spawnRate: 1
   endNode: {fileID: 0}
   spawnPoint: {fileID: 627174387}
   waveCount: {fileID: 1495779544}

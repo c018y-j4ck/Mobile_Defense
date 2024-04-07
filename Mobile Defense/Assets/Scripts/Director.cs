@@ -107,8 +107,7 @@ public class Director : MonoBehaviour
         Wave wave;
         if (waves.Length > 0)
         {
-            if (waveIndex < waves.Length) wave = waves[waveIndex];
-            else wave = waves[0];
+            wave = waves[waveIndex % waves.Length];
         }
         //if no waves are defined, this warning will display
         else
@@ -117,11 +116,13 @@ public class Director : MonoBehaviour
             "You can create waves for the director in the inspector");
             yield break;
         }
-
-        for (int i = 0; i < wave.count; i++)
+        for (int j = 0; j < waveIndex / waves.Length; j++)
         {
-            SpawnEnemy(wave.enemy);
-            yield return new WaitForSeconds(1 / wave.spawnRate);
+            for (int i = 0; i < wave.enemies.Length; i++)
+            {
+                SpawnEnemy(wave.enemies[i]);
+                yield return new WaitForSeconds(1 / (wave.spawnRate * (waveIndex / waves.Length)));
+            }
         }
         waveIndex++;
     }
@@ -149,7 +150,7 @@ public class Director : MonoBehaviour
         scoreCount.text = "Score: " + score;
     }
 
-    public static bool RemoveScore (int s)
+    public static bool RemoveScore(int s)
     {
         if (score >= s)
         {
