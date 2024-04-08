@@ -116,12 +116,12 @@ public class Director : MonoBehaviour
             "You can create waves for the director in the inspector");
             yield break;
         }
-        for (int j = 0; j < waveIndex / waves.Length; j++)
+        for (int j = 0; j < (waveIndex / waves.Length) + 1; j++)
         {
             for (int i = 0; i < wave.enemies.Length; i++)
             {
                 SpawnEnemy(wave.enemies[i]);
-                yield return new WaitForSeconds(1 / (wave.spawnRate * (waveIndex / waves.Length)));
+                yield return new WaitForSeconds(1 / (wave.spawnRate * (waveIndex / waves.Length) + 1));
             }
         }
         waveIndex++;
