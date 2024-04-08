@@ -10,6 +10,7 @@ TagManager:
   - missileTurret
   - railgunTurret
   - Text
+  - GraphicsCam
   layers:
   - Default
   - TransparentFX

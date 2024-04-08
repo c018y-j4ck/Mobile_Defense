@@ -30,6 +30,11 @@ public class Enemy : MonoBehaviour
         target = Waypoints.waypoints[0];
         health = maxHealth;
         model = transform.Find("Model").transform;
+
+        //WIP
+        Camera UICam = GameObject.FindGameObjectWithTag("GraphicsCam").GetComponent<Camera>();
+        //GetComponentInChildren<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
+        GetComponentInChildren<Canvas>().worldCamera = UICam;
     }
 
     // Update is called once per frame
