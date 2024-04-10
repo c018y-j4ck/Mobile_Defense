@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour
     public float zoomOutMin = 1;
     public float zoomOutMax = 8;
     Vector3 touchStart;
+    public Camera theCam;
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +32,12 @@ public class CameraController : MonoBehaviour
 
             float prevMagnitude = (touchZeroPrevPos - touchOnePrevPos).magnitude;
             float currentMagnitude = (touchZero.position - touchOne.position).magnitude;
+            Debug.Log(currentMagnitude);
 
             float difference = currentMagnitude - prevMagnitude;
 
             zoom(difference * 0.01f);
+            Debug.Log("Zoom");
         }
         else if (Input.GetMouseButton(0))
         {
@@ -46,6 +49,7 @@ public class CameraController : MonoBehaviour
 
     void zoom(float increment)
     {
-        Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - increment, zoomOutMin, zoomOutMax);
+        //theCam.orthographicSize = Mathf.Clamp(theCam.orthographicSize - increment, zoomOutMin, zoomOutMax);
+        theCam.transform.position = new Vector3(theCam.transform.position.x, theCam.transform.position.y - (increment*3), theCam.transform.position.z);
     }
 }

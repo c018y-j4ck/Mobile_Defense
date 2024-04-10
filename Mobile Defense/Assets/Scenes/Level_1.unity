@@ -3841,6 +3841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomOutMin: 1
   zoomOutMax: 8
+  theCam: {fileID: 963194227}
 --- !u!1001 &449213685
 PrefabInstance:
   m_ObjectHideFlags: 0
