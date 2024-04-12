@@ -31,9 +31,8 @@ public class Enemy : MonoBehaviour
         health = maxHealth;
         model = transform.Find("Model").transform;
 
-        //WIP
+
         Camera UICam = GameObject.FindGameObjectWithTag("GraphicsCam").GetComponent<Camera>();
-        //GetComponentInChildren<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
         GetComponentInChildren<Canvas>().worldCamera = UICam;
     }
 
