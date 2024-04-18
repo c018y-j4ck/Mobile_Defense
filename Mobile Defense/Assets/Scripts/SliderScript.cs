@@ -8,7 +8,7 @@ public class SliderScript : MonoBehaviour
 {
     [SerializeField] Slider theSlider;
     static float currentVol;
-    static float currentSize;
+    static int currentSize;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class SliderScript : MonoBehaviour
         }
         else
         {
-            theSlider.value = PlayerPrefs.GetFloat("text%") * 100;
+            theSlider.value = PlayerPrefs.GetInt("textSize");
         }
     }
 
@@ -32,12 +32,12 @@ public class SliderScript : MonoBehaviour
 
     public void ChangeTextSize()
     {
-        currentSize = (float)theSlider.value/100;
-        PlayerPrefs.SetFloat("text%",currentSize);
+        int currentSize = (int)theSlider.value;
+        PlayerPrefs.SetInt("textSize",currentSize);
         Text[] allText = FindObjectsOfType<Text>();
         foreach(Text i in allText)
         {
-            i.fontSize = (int)currentSize*i.fontSize;
+            i.fontSize = PlayerPrefs.GetInt("textSize");
         }
         //TextMeshProUGUI[] allTMP = FindObjectsOfType<TextMeshProUGUI>();
         //foreach (TextMeshProUGUI i in allTMP)

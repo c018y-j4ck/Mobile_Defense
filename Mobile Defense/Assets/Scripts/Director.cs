@@ -3,6 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Director : MonoBehaviour
 {
@@ -53,15 +54,16 @@ public class Director : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioListener.volume = PlayerPrefs.GetFloat("volume%");
-
-        float sizePercent = PlayerPrefs.GetFloat("text%");
-        Text[] allText = FindObjectsOfType<Text>();
-        foreach (Text i in allText)
+        if (PlayerPrefs.HasKey("volume%"))
         {
-            i.fontSize = (int)sizePercent * i.fontSize;
+            AudioListener.volume = PlayerPrefs.GetFloat("volume%");
         }
-
+        else
+        {
+            AudioListener.volume=1;
+        }
+      
+        
         lives = 25;
         livesCount = GameObject.Find("LivesCount").GetComponent<Text>();
         livesCount.text = "Lives: " + lives;
@@ -69,6 +71,18 @@ public class Director : MonoBehaviour
         score = 10;
         scoreCount = GameObject.Find("ScoreCount").GetComponent<Text>();
         scoreCount.text = "Score: " + score;
+
+        if (PlayerPrefs.HasKey("textSize"))
+        {
+            int theSize = PlayerPrefs.GetInt("textSize");
+            Text[] allText = FindObjectsOfType<Text>();
+            Debug.Log("there are " + allText.Length);
+            foreach (Text i in allText)
+            {
+                i.fontSize = theSize;
+                Debug.Log("All size " + theSize);
+            }
+        }
     }
 
     // Update is called once per frame
