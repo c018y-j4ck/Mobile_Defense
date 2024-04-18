@@ -163,7 +163,7 @@ MonoBehaviour:
   rotationSpeed: 10
   fireRate: 1
   ammo: 50
-  cost: 5
+  cost: 10
 --- !u!82 &-5475194975997096920
 AudioSource:
   m_ObjectHideFlags: 0

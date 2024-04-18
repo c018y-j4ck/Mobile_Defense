@@ -11,6 +11,7 @@ TagManager:
   - railgunTurret
   - Text
   - GraphicsCam
+  - vol
   layers:
   - Default
   - TransparentFX

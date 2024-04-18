@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,14 +13,21 @@ public class SliderScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (theSlider.CompareTag("vol"))
+        {
+            theSlider.value = PlayerPrefs.GetFloat("volume%");
+        }
+        else
+        {
+            theSlider.value = PlayerPrefs.GetFloat("text%") * 100;
+        }
     }
 
     public void ChangeVol()
     {
         AudioListener.volume = theSlider.value;
-        PlayerPrefs.SetFloat("volume%", currentSize);
-        currentVol = theSlider.value;
+        currentVol = AudioListener.volume;
+        PlayerPrefs.SetFloat("volume%", currentVol);
     }
 
     public void ChangeTextSize()
@@ -31,5 +39,10 @@ public class SliderScript : MonoBehaviour
         {
             i.fontSize = (int)currentSize*i.fontSize;
         }
+        //TextMeshProUGUI[] allTMP = FindObjectsOfType<TextMeshProUGUI>();
+        //foreach (TextMeshProUGUI i in allTMP)
+        //{
+        //    i.fontSize = (int)PlayerPrefs.GetFloat("text%") * i.fontSize;
+        //}
     }
 }
