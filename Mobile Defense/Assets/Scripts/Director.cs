@@ -24,9 +24,9 @@ public class Director : MonoBehaviour
     /// </summary>
     public Transform spawnPoint;
 
-    public Text waveCount;
-    private static Text livesCount;
-    private static Text scoreCount;
+    public TextMeshProUGUI waveCount;
+    private static TextMeshProUGUI livesCount;
+    private static TextMeshProUGUI scoreCount;
     
 
     public static int lives = 25;
@@ -65,22 +65,21 @@ public class Director : MonoBehaviour
       
         
         lives = 25;
-        livesCount = GameObject.Find("LivesCount").GetComponent<Text>();
+        livesCount = GameObject.Find("LivesCount").GetComponent<TextMeshProUGUI>();
         livesCount.text = "Lives: " + lives;
 
         score = 10;
-        scoreCount = GameObject.Find("ScoreCount").GetComponent<Text>();
+        scoreCount = GameObject.Find("ScoreCount").GetComponent<TextMeshProUGUI>();
         scoreCount.text = "Score: " + score;
 
         if (PlayerPrefs.HasKey("textSize"))
         {
             int theSize = PlayerPrefs.GetInt("textSize");
-            Text[] allText = FindObjectsOfType<Text>();
-            Debug.Log("there are " + allText.Length);
-            foreach (Text i in allText)
+            TextMeshProUGUI[] allTmpro = FindObjectsOfType<TextMeshProUGUI>();
+            Debug.Log("there are " + allTmpro.Length);
+            foreach (TextMeshProUGUI i in allTmpro)
             {
                 i.fontSize = theSize;
-                Debug.Log("All size " + theSize);
             }
         }
     }
