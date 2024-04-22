@@ -92,7 +92,7 @@ public class Node : MonoBehaviour
         {
             if (Director.score >= 5)
             {
-                turret.GetComponent<Turret>().fireRate = 2;
+                turret.GetComponent<Turret>().fireRate = 1.5f;
                 turret.transform.GetChild(0).transform.GetChild(1).GetComponent<MeshRenderer>().material = gold;
                 Director.RemoveScore(5);
             }
