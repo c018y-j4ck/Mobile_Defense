@@ -4148,7 +4148,6 @@ RectTransform:
   - {fileID: 1390502928}
   - {fileID: 1752693186}
   - {fileID: 336149563}
-  - {fileID: 1227615472}
   m_Father: {fileID: 143256990}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -11133,19 +11132,19 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227615471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.5738535}
-  m_LocalScale: {x: 1.0003587, y: 1.0003587, z: 1.0003587}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.75875026, y: 0.75875026, z: 0.75875026}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 394106454}
   - {fileID: 461878766}
   - {fileID: 2074367421}
   - {fileID: 877885136}
-  m_Father: {fileID: 444185601}
+  m_Father: {fileID: 1900674809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00012207031, y: 0}
+  m_AnchoredPosition: {x: 25, y: -38}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1228107050 stripped
@@ -17312,6 +17311,7 @@ RectTransform:
   m_Children:
   - {fileID: 443719703}
   - {fileID: 2068669854}
+  - {fileID: 1227615472}
   m_Father: {fileID: 143256990}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
