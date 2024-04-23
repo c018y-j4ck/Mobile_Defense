@@ -52,16 +52,7 @@ public class Director : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        if (PlayerPrefs.HasKey("volume%"))
-        {
-            AudioListener.volume = PlayerPrefs.GetFloat("volume%");
-        }
-        else
-        {
-            AudioListener.volume=1;
-        }
-      
+    {     
         
         lives = 25;
         livesCount = GameObject.Find("LivesCount").GetComponent<TextMeshProUGUI>();
@@ -71,16 +62,6 @@ public class Director : MonoBehaviour
         scoreCount = GameObject.Find("ScoreCount").GetComponent<TextMeshProUGUI>();
         scoreCount.text = "Score: " + score;
 
-        if (PlayerPrefs.HasKey("textSize"))
-        {
-            int theSize = PlayerPrefs.GetInt("textSize");
-            TextMeshProUGUI[] allTmpro = FindObjectsOfType<TextMeshProUGUI>();
-            Debug.Log("there are " + allTmpro.Length);
-            foreach (TextMeshProUGUI i in allTmpro)
-            {
-                i.fontSize = theSize;
-            }
-        }
     }
 
     // Update is called once per frame

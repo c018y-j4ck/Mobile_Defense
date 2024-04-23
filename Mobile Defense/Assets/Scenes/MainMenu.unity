@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -734,7 +734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -354, y: -274}
+  m_AnchoredPosition: {x: -200, y: -45}
   m_SizeDelta: {x: 287, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &201857972
@@ -903,7 +903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -154}
+  m_AnchoredPosition: {x: 200, y: -45}
   m_SizeDelta: {x: 287, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &260719518
@@ -1770,7 +1770,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -253}
+  m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 287, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &838473094
@@ -2428,7 +2428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -11.9}
+  m_AnchoredPosition: {x: 200, y: 114}
   m_SizeDelta: {x: 287, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1024876146
@@ -2695,7 +2695,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 90.5}
+  m_AnchoredPosition: {x: -200, y: 115}
   m_SizeDelta: {x: 287, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1155325165
@@ -4073,9 +4073,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2025588538}
   m_Direction: 0
   m_MinValue: 20
-  m_MaxValue: 50
+  m_MaxValue: 45
   m_WholeNumbers: 1
-  m_Value: 50
+  m_Value: 45
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

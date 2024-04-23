@@ -10,36 +10,34 @@ public class GetOptionsValues : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioListener.volume = PlayerPrefs.GetFloat("volume%");
-        //if (PlayerPrefs.GetFloat("text%") == 0f)
-        //{
-        //    fontSize = 1f;
-        //}
-        Text[] allText = FindObjectsOfType<Text>();
-        foreach (Text i in allText)
-        {
-            i.fontSize = (int)PlayerPrefs.GetFloat("text%") * i.fontSize;
-        }
-        //TextMeshProUGUI[] allTMP = FindObjectsOfType<TextMeshProUGUI>();
-        //foreach (TextMeshProUGUI i in allTMP)
-        //{
-        //    i.fontSize = (int)PlayerPrefs.GetFloat("text%") * i.fontSize;
-        //}
+        setOptions();
     }
 
     // Update is called once per frame
     void Update()
     {
-        AudioListener.volume = PlayerPrefs.GetFloat("volume%");
-        Text[] allText = FindObjectsOfType<Text>();
-        foreach (Text i in allText)
+        setOptions();
+    }
+
+    private void setOptions()
+    {
+        if (PlayerPrefs.HasKey("volume%"))
         {
-            i.fontSize = (int)PlayerPrefs.GetFloat("text%") * i.fontSize;
+            AudioListener.volume = PlayerPrefs.GetFloat("volume%");
         }
-        //TextMeshProUGUI[] allTMP = FindObjectsOfType<TextMeshProUGUI>();
-        //foreach (TextMeshProUGUI i in allTMP)
-        //{
-        //    i.fontSize = (int)PlayerPrefs.GetFloat("text%") * i.fontSize;
-        //}
+        else
+        {
+            AudioListener.volume = 1;
+        }
+        if (PlayerPrefs.HasKey("textSize"))
+        {
+            int theSize = PlayerPrefs.GetInt("textSize");
+            TextMeshProUGUI[] allTmpro = FindObjectsOfType<TextMeshProUGUI>();
+            Debug.Log("there are " + allTmpro.Length);
+            foreach (TextMeshProUGUI i in allTmpro)
+            {
+                i.fontSize = theSize;
+            }
+        }
     }
 }
