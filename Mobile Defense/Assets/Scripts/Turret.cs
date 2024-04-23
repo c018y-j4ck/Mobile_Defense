@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Turret : MonoBehaviour
 {
@@ -9,11 +10,13 @@ public class Turret : MonoBehaviour
 
     private float fireTimer = 0f;
     private string enemyTag = "Enemy";
+    private int maxAmmo = 100;
 
     public Transform rotatingPart;
     public Transform firePoint;
     public GameObject bullet;
     public AudioClip shootSound;
+    public Image healthBar;
     protected AudioSource aS;
     protected float laserWidth = 0f;
 
@@ -30,6 +33,7 @@ public class Turret : MonoBehaviour
         aS = GetComponent<AudioSource>();
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
         fireTimer = 1f / fireRate;
+        maxAmmo = ammo;
     }
 
     // Update is called once per frame
@@ -86,11 +90,21 @@ public class Turret : MonoBehaviour
         {
             Destroy(this.gameObject, 1f);
         }
+
+        UpdateHealthBar();
     }
 
     public virtual void RenderLaser()
     {
         if (laserWidth > 0f) laserWidth = Mathf.Max(0f, laserWidth - 0.01f);
+    }
+
+    public void UpdateHealthBar()
+    {
+        if (healthBar == null) return;
+
+        healthBar.fillAmount = (float) ammo / maxAmmo;
+        Debug.Log((float) ammo / maxAmmo);
     }
 
     private void OnDrawGizmosSelected()

@@ -159,6 +159,7 @@ MonoBehaviour:
   firePoint: {fileID: 939076212692349386}
   bullet: {fileID: 4637228483803035377, guid: 428ba02b13408e14dac633cdd7629093, type: 3}
   shootSound: {fileID: 8300000, guid: c59699ade81d5b544b17acbe2d140d59, type: 3}
+  healthBar: {fileID: 7050051083092857974}
   range: 25
   rotationSpeed: 10
   fireRate: 0.5
@@ -342,6 +343,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6216285489925913119}
     m_Modifications:
+    - target: {fileID: 326333534482750606, guid: d42e114b6473ccb45bb7ec9bba456ee7, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 326333534482750606, guid: d42e114b6473ccb45bb7ec9bba456ee7, type: 3}
+      propertyPath: m_FillOrigin
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4873345614794053522, guid: d42e114b6473ccb45bb7ec9bba456ee7, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -436,3 +445,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7386626355326974066, guid: d42e114b6473ccb45bb7ec9bba456ee7, type: 3}
   m_PrefabInstance: {fileID: 7300773175397173496}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7050051083092857974 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 326333534482750606, guid: d42e114b6473ccb45bb7ec9bba456ee7, type: 3}
+  m_PrefabInstance: {fileID: 7300773175397173496}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -58,7 +58,7 @@ public class Director : MonoBehaviour
         livesCount = GameObject.Find("LivesCount").GetComponent<TextMeshProUGUI>();
         livesCount.text = "Lives: " + lives;
 
-        score = 10;
+        score = 75;
         scoreCount = GameObject.Find("ScoreCount").GetComponent<TextMeshProUGUI>();
         scoreCount.text = "Score: " + score;
 

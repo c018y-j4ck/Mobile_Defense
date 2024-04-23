@@ -16,7 +16,7 @@ public class RailgunTurret : Turret
 
         ray = new Ray();
         ray.origin = transform.position + Vector3.up * 0.2f;
-        ray.direction = rotatingPart.forward;
+        ray.direction = -rotatingPart.forward;
         rayHits = Physics.RaycastAll(ray);
 
         laserWidth = 1f;
@@ -33,6 +33,14 @@ public class RailgunTurret : Turret
                 }
             }
         }
+
+        ammo--;
+        if (ammo <= 0)
+        {
+            Destroy(this.gameObject, 1f);
+        }
+
+        UpdateHealthBar();
     }
 
     public override void RenderLaser()
