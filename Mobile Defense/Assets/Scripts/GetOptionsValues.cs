@@ -29,14 +29,32 @@ public class GetOptionsValues : MonoBehaviour
         {
             AudioListener.volume = 1;
         }
-        if (PlayerPrefs.HasKey("textSize"))
+        if (PlayerPrefs.HasKey("textSize%"))
         {
-            int theSize = PlayerPrefs.GetInt("textSize");
+            float theSize = PlayerPrefs.GetFloat("textSize%");
             TextMeshProUGUI[] allTmpro = FindObjectsOfType<TextMeshProUGUI>();
             Debug.Log("there are " + allTmpro.Length);
             foreach (TextMeshProUGUI i in allTmpro)
             {
-                i.fontSize = theSize;
+                if (!i.gameObject.tag.Equals("InstrucText"))
+                {
+                    if (i.gameObject.tag.Equals("TurretTopText"))
+                    {
+                        i.fontSize = (int)5 * theSize;
+                    }
+                    else if (i.gameObject.tag.Equals("TurretButtonText"))
+                    {
+                        i.fontSize = (int)12 * theSize;
+                    }
+                    else if (i.gameObject.tag.Equals("TurretMenuText"))
+                    {
+                        i.fontSize = (int)15 * theSize;
+                    }
+                    else
+                    {
+                        i.fontSize = (int)50 * theSize;
+                    }
+                }
             }
         }
     }

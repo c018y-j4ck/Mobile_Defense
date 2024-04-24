@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
 
     private Vector2 startPos;
 
-    private float camIncement = 5;
+    //private float camIncement = 5;
 
     public GameObject zoomButtonsUI;
 
@@ -25,21 +25,21 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (theCam.transform.position.y <= 70)
+        /*if (theCam.transform.position.y <= 70)
         {
             zoomButtonsUI.SetActive(true);
         }
         else
         {
             zoomButtonsUI.SetActive(false);
-        }
+        }*/
 
         if (Input.GetMouseButtonDown(0))
         {
             touchStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
-        if (Input.touchCount == 2)
+        /*if (Input.touchCount == 2)
         {
             Touch touchZero = Input.GetTouch(0);
             Touch touchOne = Input.GetTouch(1);
@@ -59,12 +59,12 @@ public class CameraController : MonoBehaviour
             Vector3 direction = touchStart - Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Camera.main.transform.position += direction;
         }
-        zoom(Input.GetAxis("Mouse ScrollWheel"));
+        zoom(Input.GetAxis("Mouse ScrollWheel"));*/
 
        
     }
 
-    void zoom(float increment)
+    /*void zoom(float increment)
     {
         theCam.transform.position = new Vector3(theCam.transform.position.x, theCam.transform.position.y - (increment*3), theCam.transform.position.z);
     }
@@ -87,5 +87,5 @@ public class CameraController : MonoBehaviour
     public void PointerDownCamDown()
     {
         theCam.transform.Translate(0, -camIncement, 0);
-    }
+    }*/
 }

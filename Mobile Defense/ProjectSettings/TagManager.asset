@@ -12,6 +12,10 @@ TagManager:
   - Text
   - GraphicsCam
   - vol
+  - TurretMenuText
+  - TurretButtonText
+  - TurretTopText
+  - InstrucText
   layers:
   - Default
   - TransparentFX

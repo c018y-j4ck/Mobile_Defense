@@ -32,12 +32,12 @@ public class SliderScript : MonoBehaviour
 
     public void ChangeTextSize()
     {
-        int currentSize = (int)theSlider.value;
-        PlayerPrefs.SetInt("textSize",currentSize);
+        float currentSize = theSlider.value;
+        PlayerPrefs.SetFloat("textSize%",currentSize);
         Text[] allText = FindObjectsOfType<Text>();
         foreach(Text i in allText)
         {
-            i.fontSize = PlayerPrefs.GetInt("textSize");
+            i.fontSize = PlayerPrefs.GetInt("textSize%");
         }
         //TextMeshProUGUI[] allTMP = FindObjectsOfType<TextMeshProUGUI>();
         //foreach (TextMeshProUGUI i in allTMP)
